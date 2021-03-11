@@ -1,0 +1,13 @@
+{
+  "@context": "http://schema.org",
+  "@id": "http://my.fancy.page/download",
+  "@type": "Dataset",
+  "dct:conformsTo": "https://bioschemas.org/profiles/Dataset/0.3-RELEASE-2019_06_14",
+  "description": "minimum description of the dataset",
+  "identifier": [
+    "RNAseq"
+  ],
+  "keywords": [],
+  "name": "Experiment on new species X ",
+  "url": ""
+}
