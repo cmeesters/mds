@@ -1,13 +1,16 @@
 {
   "@context": "http://schema.org",
-  "@id": "http://my.fancy.page/download",
+  "@id": "own URL",
   "@type": "Dataset",
   "dct:conformsTo": "https://bioschemas.org/profiles/Dataset/0.3-RELEASE-2019_06_14",
-  "description": "minimum description of the dataset",
+  "description": "my description",
   "identifier": [
-    "RNAseq"
+    "my identifier for item 1",
+    "my identifier for item 1"
   ],
-  "keywords": [],
-  "name": "Experiment on new species X ",
-  "url": ""
+  "keywords": [
+    "my keywords"
+  ],
+  "name": "my name",
+  "url": "own download URL - may be same as in @id"
 }
