@@ -34,6 +34,7 @@ setup(name='imcs',
       #packages=['imcs'],
       scripts=glob.glob('bin/*'),
       data_files=[
+                 ('README', 'README'),
                  # ATTENTION: sample data should be small
                  ('sample_data', getfilelist('sample_data'))]
       )
