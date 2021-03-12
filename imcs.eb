@@ -1,0 +1,31 @@
+easyblock = 'Binary'
+
+name = 'imcs'
+version = '0.1'
+versionsuffix = '-Python-%(pyver)s'
+
+homepage = 'https://gitlab.rlp.net/hpc/imcs'
+description = """Script(s) offering schema translation to AVUs and annotating iRODS collections with them"""
+
+toolchain = {'name': 'foss', 'version': '2019b'}
+
+# this is a bundle of Python packages
+exts_defaultclass = 'PythonPackage'
+
+#use_pip = True
+
+dependencies = [
+    ('Python', '3.7.4', '', ('GCCcore', '8.3.0')),
+    ('irods_avu_json', '2.1.0', '-Python-3.7.4', ('GCCcore', '8.3.0')),
+]
+
+source_urls = ['https://gitlab.rlp.net/hpc/imcs/-/archive/%(version)s']
+sources = ['%(name)s-%(version)s.tar.gz']
+extract_sources = True
+
+sanity_check_paths = {
+    'files': [],
+    'dirs': ['bin'],
+}
+
+moduleclass = 'tools'
