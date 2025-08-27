@@ -1,0 +1,48 @@
+[project]
+name = "mds"
+dynamic = ["version"]
+description = "MetaData Steward converting a dataset's metada between JSON <-> YAML <-> iRODS -> nanopub"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+keywords = []
+authors = [
+  { name = "Christian Meesters", email = "meesters@uni-mainz.de" },
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: Implementation :: CPython",
+]
+dependencies = [
+  "python-irodsclient",
+  "nanopub",
+  "PyYAML",
+]
+
+[project.urls]
+Documentation = "https://github.com/cmeesters/mds/README.md"
+Issues = "https://github.com/cmeesters/mds/issues"
+Source = "https://github.com/cmeesters/mds"
+
+
+[tool.coverage.run]
+source_pkgs = ["mcs", "tests"]
+branch = true
+parallel = true
+omit = [
+  "src/temporary/__about__.py",
+]
+
+[tool.coverage.paths]
+temporary = ["src/temporary", "*/temporary/src/temporary"]
+tests = ["tests", "*/temporary/tests"]
+
+[tool.coverage.report]
+exclude_lines = [
+  "no cov",
+  "if __name__ == .__main__.:",
+  "if TYPE_CHECKING:",
+]
