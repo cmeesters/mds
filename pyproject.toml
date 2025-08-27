@@ -1,35 +1,28 @@
-[project]
+[tool.poetry]
 name = "mds"
-dynamic = ["version"]
-description = "MetaData Steward converting a dataset's metada between JSON <-> YAML <-> iRODS -> nanopub"
+version = "0.1.0"
+description = "MetaData Steward converting a dataset's metadata between JSON <-> YAML <-> iRODS -> nanopub"
+authors = ["Christian Meesters <meesters@uni-mainz.de>"]
 readme = "README.md"
-requires-python = ">=3.11"
 license = "MIT"
-keywords = []
-authors = [
-  { name = "Christian Meesters", email = "meesters@uni-mainz.de" },
-]
-classifiers = [
-  "Development Status :: 4 - Beta",
-  "Programming Language :: Python",
-  "Programming Language :: Python :: 3.11",
-  "Programming Language :: Python :: 3.12",
-  "Programming Language :: Python :: Implementation :: CPython",
-]
-dependencies = [
-  "python-irodsclient",
-  "nanopub",
-  "PyYAML",
-]
+repository = "https://github.com/cmeesters/mds"
+documentation = "https://github.com/cmeesters/mds/README.md"
+keywords = ["metadata", "json", "yaml", "irods", "nanopub"]
 
-[project.urls]
-Documentation = "https://github.com/cmeesters/mds/README.md"
-Issues = "https://github.com/cmeesters/mds/issues"
-Source = "https://github.com/cmeesters/mds"
+[tool.poetry.dependencies]
+python = "^3.11"
+python-irodsclient = "*"
+nanopub-py = "*"
+PyYAML = "*"
 
+[tool.poetry.group.dev.dependencies]
+black = "^23.7.0"
+flake8 = "^6.1.0"
+coverage = "^7.3.1"
+pytest = "^8.3.5"
 
 [tool.coverage.run]
-source_pkgs = ["mcs", "tests"]
+source_pkgs = ["mds", "tests"]
 branch = true
 parallel = true
 omit = [
@@ -46,3 +39,7 @@ exclude_lines = [
   "if __name__ == .__main__.:",
   "if TYPE_CHECKING:",
 ]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
