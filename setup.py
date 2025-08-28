@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 
-#from setuptools import setup
+# from setuptools import setup
 from distutils.core import setup
 import glob
 import os
+
 
 def getfilelist(directory):
     """
@@ -25,21 +26,24 @@ def getfilelist(directory):
 
     return allFiles
 
-setup(name='mds',
-      version='0.1',
-      author='Christian Meesters',
-      author_email='meesters@uni-mainz.de',
-      url='https://gitlab.rlp.net/hpc/imcs',
-      # list folders, not files
-      #packages=['imcs'],
-      scripts=glob.glob('bin/*'),
-      install_requires=[
-          'python-irodsclient',
-          'nanopub-py',
-          'PyYAML',
-      ],
-      data_files=[
-                 ('README', 'README'),
-                 # ATTENTION: sample data should be small
-                 ('sample_data', getfilelist('sample_data'))]
-      )
+
+setup(
+    name="mds",
+    version="0.1",
+    author="Christian Meesters",
+    author_email="meesters@uni-mainz.de",
+    url="https://gitlab.rlp.net/hpc/imcs",
+    # list folders, not files
+    # packages=['imcs'],
+    scripts=glob.glob("bin/*"),
+    install_requires=[
+        "python-irodsclient",
+        "nanopub-py",
+        "PyYAML",
+    ],
+    data_files=[
+        ("README", "README"),
+        # ATTENTION: sample data should be small
+        ("sample_data", getfilelist("sample_data")),
+    ],
+)
