@@ -1,7 +1,6 @@
 import json
 import rdflib
 from nanopub import Nanopub, NanopubConf, load_profile
-import sys
 
 import requests
 
@@ -57,7 +56,7 @@ def create_nanopub(data, use_testnet=False, debug_flag=False):
     """
     np_conf = NanopubConf(
         use_test_server=use_testnet,
-        profile=load_profile(),  # Loads the user profile that was created with `np setup`
+        profile=load_profile(),
         add_prov_generated_time=True,
         attribute_publication_to_profile=True,
     )
