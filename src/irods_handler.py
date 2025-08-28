@@ -3,6 +3,7 @@ import shlex
 import subprocess
 import sys
 
+
 def populate_avu(collection, avu):
     """
     performs an
@@ -29,6 +30,7 @@ def populate_avu(collection, avu):
         print("Error code was %s, stderr: %s" % (process.returncode, err))
     return process.returncode, out, err
 
+
 def get_avus(collection):
     """
     performs an
@@ -52,4 +54,8 @@ def get_avus(collection):
         print("Message was: %s" % str(out))
         print("Error code was %s, stderr: %s" % (process.returncode, err))
         return process.returncode, [], err  # return empty list on error
-    return 0, [dict(zip(["a", "v", "u"], line.split())) for line in out.splitlines()], None
+    return (
+        0,
+        [dict(zip(["a", "v", "u"], line.split())) for line in out.splitlines()],
+        None,
+    )

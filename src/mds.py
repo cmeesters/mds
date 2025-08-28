@@ -1,12 +1,6 @@
 #!/usr/bin/env python3
 
 import argparse
-import locale
-import shlex
-import subprocess
-import sys
-
-import jsonavu
 
 from metadata import create_data_object_from_json
 from nanopub_handler import create_nanopub, set_debug
@@ -26,13 +20,11 @@ if __name__ == "__main__":
         default=False,
     )
     nanopub.add_argument(
-        "-n", "--nanopub", action="store_true",
-        help="create a nanopub"
+        "-n", "--nanopub", action="store_true", help="create a nanopub"
     )
 
     irods = parser.add_argument_group("iRODs related Information")
-    irods.add_argument("-c", "--collection", 
-                       help="the iRODS collection to annotate")
+    irods.add_argument("-c", "--collection", help="the iRODS collection to annotate")
 
     utils = parser.add_argument_group("Utility options")
     utils.add_argument(
@@ -55,9 +47,7 @@ if __name__ == "__main__":
     # avus = jsonavu.json2avu(data, "root")
 
     if args.nanopub:
-        create_nanopub(data_object, 
-                       use_testnet=not args.real, 
-                       debug_flag=args.debug)
+        create_nanopub(data_object, use_testnet=not args.real, debug_flag=args.debug)
 
 
 #    for triplet in avus:
