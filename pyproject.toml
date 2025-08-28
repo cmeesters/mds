@@ -12,8 +12,9 @@ keywords = ["metadata", "json", "yaml", "irods", "nanopub"]
 [tool.poetry.dependencies]
 python = "^3.11"
 python-irodsclient = "*"
-nanopub-py = "*"
+nanopub = "^2.0.1"
 PyYAML = "*"
+irods_avu_json = "*"
 
 [tool.poetry.group.dev.dependencies]
 black = "^23.7.0"
